@@ -1,0 +1,14 @@
+{
+  "name": "@alshdavid/atlaspack-basic",
+  "version": "1.0.0",
+  "browsersList": "last 2 Chrome versions",
+  "targets": {
+    "default": {
+      "context": "browser",
+      "source": "./src/index.html",
+      "distDir": "./dist",
+      "outputFormat": "global",
+      "sourceMap": false
+    }
+  }
+}

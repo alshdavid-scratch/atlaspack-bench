@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PATH_SCRIPT="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+export ATLASPACK_DEV=true
+
+cd $PATH_SCRIPT/../../atlaspack
+cargo watch -w "./crates" -w "./packages" -- bash -c "clear && yarn build-native-release && node '$PATH_SCRIPT/../build-v3.mjs'"

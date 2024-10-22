@@ -1,0 +1,34 @@
+task-progress (buff)
+AGR: 12.212s
+AGR: 12.493s
+AGR: 12.184s
+
+AGR.Ser: 657.452ms
+AGR.Ser: 675.692ms
+AGR.Ser: 730.247ms
+
+full (buff)
+AGR: 1:53.000 (m:ss.mmm)
+AGR: 1:57.586 (m:ss.mmm)
+
+AGR.Ser: 7.029s
+AGR.Ser: 6.675s
+
+
+/// MAIN
+task-progress 
+
+AGR: 14.467s
+AGR: 12.683s
+AGR: 13.022s
+
+AGR.Ser: 1.092s
+AGR.Ser: 1.026s
+AGR.Ser: 1.089s
+
+full
+AGR: 1:56.894 (m:ss.mmm)
+AGR: 1:50.187 (m:ss.mmm)
+
+AGR.Ser: 1:18.789 (m:ss.mmm)
+AGR.Ser: 1:17.137 (m:ss.mmm)

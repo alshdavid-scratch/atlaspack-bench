@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "checkJs": true,
+    "declaration": true,
+    "noEmit": true,
+    "paths": {
+      "@atlaspack/core": ["../atlaspack/packages/core/core/index.d.ts"],
+      "@atlaspack/core/src/index.js": ["../atlaspack/packages/core/core/index.d.ts"],
+      "@atlaspack/fs/src/index.js": ["../atlaspack/packages/core/fs/index.d.ts"]
+    }
+  },
+  "include": ["./build.mjs", "plugins/**/*"],
+  "exclude": ["node_modules", "src"]
+}

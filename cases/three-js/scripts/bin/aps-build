@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PATH_SCRIPT="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+export ATLASPACK_DEV=true
+export ATLASPACK_SRC=true
+rm -rf "$PATH_SCRIPT/../../.parcel-cache"
+
+node "$PATH_SCRIPT/../../node_modules/@atlaspack/cli/bin/dev-bin.js" \
+  build \
+    --feature-flag atlaspackV3=true \
+    "$PATH_SCRIPT/../../src_2/index.html"
