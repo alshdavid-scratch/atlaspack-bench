@@ -1,0 +1,67 @@
+#!/bin/env bash
+
+BIN_PROD="./node_modules/@atlaspack/cli/bin/atlaspack.js"
+BIN_DEV="./node_modules/@atlaspack/cli/bin/dev-bin.js"
+
+function setup() {
+  cd ./scripts
+  test -d ./node_modules || npm i
+  node --experimental-strip-types ./cmd/main.ts
+  node --experimental-strip-types ./cmd/generate.ts
+}
+
+function build() {
+  if [ "$1" == "" ]; then
+    n="10"
+  else
+    n="$1"
+  fi
+
+  test -d ./node_modules || npm i
+  rm -rf .parcel-cache dist
+  exec node "${BIN_PROD}" build \
+    ./src/index_${n}.js
+}
+
+function build-dev() {
+  if [ "$1" == "" ]; then
+    n="10"
+  else
+    n="$1"
+  fi
+
+  test -d ./node_modules || npm i
+  rm -rf .parcel-cache dist
+  exec node "${BIN_DEV}" build \
+    ./src/index_${n}.js
+}
+
+function build-v3() {
+  if [ "$1" == "" ]; then
+    n="10"
+  else
+    n="$1"
+  fi
+
+  test -d ./node_modules || npm i
+  rm -rf .parcel-cache dist
+  exec node "${BIN_PROD}" build \
+    --feature-flag atlaspackV3=true \
+    ./src/index_${n}.js
+}
+
+function build-v3-dev() {
+  if [ "$1" == "" ]; then
+    n="10"
+  else
+    n="$1"
+  fi
+
+  test -d ./node_modules || npm i
+  rm -rf .parcel-cache dist
+  exec node "${BIN_DEV}" build \
+    --feature-flag atlaspackV3=true \
+    ./src/index_${n}.js
+}
+
+$1 "${@:2}"

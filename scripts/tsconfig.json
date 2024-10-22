@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "checkJs": true,
+    "declaration": true,
+    "noEmit": true
+  },
+  "include": ["cmd/**/*"]
+}
