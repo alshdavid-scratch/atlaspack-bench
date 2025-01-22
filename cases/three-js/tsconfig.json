@@ -14,5 +14,5 @@
     }
   },
   "include": ["./build.mjs", "plugins/**/*"],
-  "exclude": ["node_modules", "src"]
+  "exclude": ["node_modules", "src", "vendor"]
 }
